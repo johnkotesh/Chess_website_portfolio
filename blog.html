@@ -4,58 +4,131 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chess Blog</title>
-    <style>body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f9f9f9;
-    }
-    
-    header {
-        background-color: #333;
-        color: #fff;
-        padding: 20px;
-    }
-    
-    header h1 {
-        margin: 0;
-    }
-    
-    nav ul {
-        list-style-type: none;
-        padding: 0;
-    }
-    
-    nav ul li {
-        display: inline;
-        margin-right: 20px;
-    }
-    
-    nav ul li a {
-        color: #fff;
-        text-decoration: none;
-    }
-    
-    main {
-        padding: 20px;
-    }
-    
-    footer {
-        background-color: #333;
-        color: #fff;
-        text-align: center;
-        padding: 10px 0;
-        position: fixed;
-        bottom: 0;
-        width: 100%;
-    }
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        header h1 {
+            margin: 0;
+        }
+        
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+        
+        nav ul li {
+            margin-right: 20px;
+        }
+        
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        main {
+            padding: 20px;
+        }
+        
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Hamburger Menu Icon Styles */
+        .menu-btn {
+            display: none;
+            cursor: pointer;
+        }
+
+        .menu-btn .menu-icon {
+            width: 30px;
+            height: 3px;
+            background-color: #fff;
+            margin: 6px 0;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .menu-btn.open .menu-icon:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        .menu-btn.open .menu-icon:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-btn.open .menu-icon:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+
+        @media (max-width: 768px) {
+            .menu-btn {
+                display: block;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                background-color: #333;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+            }
+
+            nav ul.open {
+                display: flex;
+            }
+
+            nav ul li {
+                margin: 0;
+                text-align: center;
+                padding: 10px 0;
+                border-bottom: 1px solid #666;
+            }
+
+            nav ul li:last-child {
+                border-bottom: none;
+            }
+        }
     </style>
 </head>
 <body>
     <header>
         <h1>Chess Blog</h1>
+        <div class="menu-btn" onclick="toggleMenu()">
+            <div class="menu-icon"></div>
+            <div class="menu-icon"></div>
+            <div class="menu-icon"></div>
+        </div>
         <nav>
-           
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="course.html">COURSE</a></li>
+                <li><a href="blog.html">BLOG</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
         </nav>
     </header>
     <main>
@@ -64,7 +137,7 @@
         </header>
         <main>
             <article>
-                <img src=https://images.pexels.com/photos/12989478/pexels-photo-12989478.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1 alt="Chess Pieces" style="width: 30%;">
+                <img src="https://images.pexels.com/photos/12989478/pexels-photo-12989478.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Chess Pieces" style="width: 30%;">
                 <p>In the realm of strategy and intellect, chess stands as a timeless beacon. 
                     Each piece, a symbol of power and calculation, moves across the board in a ballet of tactical maneuvers. 
                     From the elegant grace of the queen to the humble yet crucial pawn, every move holds significance, shaping the destiny of the game.
@@ -81,6 +154,11 @@
     <footer>
         <p>&copy; 2024 Chess Blog. All rights reserved.</p>
     </footer>
-    <script>var board = Chessboard('myBoard', 'start');</script>
+    <script>
+        function toggleMenu() {
+            var navLinks = document.querySelector("nav ul");
+            navLinks.classList.toggle("open");
+        }
+    </script>
 </body>
 </html>
