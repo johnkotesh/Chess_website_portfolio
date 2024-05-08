@@ -5,87 +5,101 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us</title>
-</head>
-<body>
-     <nav>
-            <a href="website.html"><img src="john.jpeg"></a>
-            <div class="nav-links" id="navLinks">
-                <i class="fa fa-times" onclick="hideMenu()"></i>
-                <ul>
-                    <li><a href="">HOME</a></li>
-                    <li><a href="about.html">ABOUT</a></li>
-                    <li><a href="course.html">COURSE</a></li>
-                    <li><a href="blog.html">BLOG</a></li>
-                    <li><a href="contact.html">CONTACT</a></li>
-                </ul>
-            </div>
-            <i class="fa fa-bars" onclick="showMenu()"></i>
-        </nav>
-    <div class="heading">
-        <h1>About Us</h1>
-        <p>I have been a chess coach for the last 13 years. I teach chess who are very interested and eager to learn.
-            I have produced state-level champions. let us know together this awesome game.</p>
-    </div>
-    <section class="about-us">
-        <img src="kk.png">
-        <div class="content">
-        <h2>Famous Quotes</h2>
-        <p>"Chess is the art which expresses the science of logic."</p>
-
-            <button class="btn">Read More</button>
-           
-
-            </div>
-    </section>
-    
-    
-    <style>
-
-
-body{
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
     background-color: #dee0e3;
 }
-.heading{
+
+.navbar {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    width: 80px;
+    height: auto;
+}
+
+.menu-icon {
+    display: none;
+    cursor: pointer;
+}
+
+.fa-bars {
+    font-size: 1.5rem;
+}
+
+.nav-links {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.heading {
     text-align: center;
     margin-top: 25px;
 }
-.heading h1{
+
+.heading h1 {
     font-size: 50px;
     color: #36455c;
     margin-bottom: 10px;
 }
-.heading p{
+
+.heading p {
     font-size: 20px;
     color: #666;
     margin-bottom: 50px;
 }
-.about-us{
+
+.about-us {
     display: flex;
     align-items: center;
     width: 85%;
     margin: auto;
 }
-.about-us img{
+
+.about-us img {
     flex: 0 50%;
     max-width: 50%;
     height: auto;
-
 }
-.content h2{
+
+.content h2 {
     color: #36455c;
     font-size: 24px;
     margin: 15px 0px;
-
 }
-.content{
+
+.content p {
     color: #666;
     font-size: 18px;
     line-height: 1.5;
     margin: 15px 0px;
-
 }
-.btn{
-    display:inline-block;
+
+.btn {
+    display: inline-block;
     color: #fff;
     background-color: #0084ff;
     border: none;
@@ -95,25 +109,79 @@ body{
     cursor: pointer;
     transition: 0.2s ease;
 }
-.btn:hover{
+
+.btn:hover {
     background-color: #006dd6;
 }
-@media(max-width: 768px){
-    .about-us{
-        flex-direction: column;
-    }
-    .about-us img{
-        flex: 0 100%;
-        max-width: 100%;
 
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block;
     }
-    .content{
-        flex: 0 100%;
-        max-width: 100%;
-        padding: 15px;
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #333;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 0;
+        text-align: center;
+        padding: 10px 0;
+        border-bottom: 1px solid #666;
+    }
+
+    .nav-links li:last-child {
+        border-bottom: none;
     }
 }
-    </style>
+</style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="website.html"><img src="john.jpeg" alt="Logo"></a>
+        </div>
+        <div class="menu-icon" onclick="toggleMenu()">
+            <i class="fa fa-bars"></i>
+        </div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="website.html">HOME</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="course.html">COURSE</a></li>
+            <li><a href="blog.html">BLOG</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+    </nav>
+
+    <div class="heading">
+        <h1>About Us</h1>
+        <p>I have been a chess coach for the last 13 years. I teach chess enthusiasts who are very interested and eager to learn. I have produced state-level champions. Let's explore this awesome game together.</p>
+    </div>
     
+    <section class="about-us">
+        <img src="kk.png" alt="Famous Chess Quotes">
+        <div class="content">
+            <h2>Famous Quotes</h2>
+            <p>"Chess is the art which expresses the science of logic."</p>
+            <button class="btn">Read More</button>
+        </div>
+    </section>
+
+    <script>
+        function toggleMenu() {
+            var navLinks = document.getElementById("navLinks");
+            navLinks.classList.toggle("open");
+        }
+    </script>
 </body>
 </html>
