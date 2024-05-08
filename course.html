@@ -1,56 +1,135 @@
-<html> 
-    <head> 
-        <title> Courses Page </title> 
-     
-        <style> 
-          
-            body { 
-                background-color: #FBF1D3; 
-                font-family: Arial, sans-serif; 
-            } 
-            
-            h1 { 
-                text-align: center; 
-                color: maroon; 
-            } 
-            
-            .course { 
-                background-color: white; 
-                border: 1px solid gray; 
-                padding: 20px; 
-                margin: 20px; 
-                width: 80%; 
-            } 
-            
-            .course h2 { 
-                text-align: center; 
-                color: maroon; 
-            } 
-            
-            .course p { 
-                text-align: justify; 
-                font-size: 14px; 
-            } 
-        </style> 
-    </head> 
-    <body> 
-         <nav>
-            
-            <div class="nav-links" id="navLinks">
-                <i class="fa fa-times" onclick="hideMenu()"></i>
-                <ul>
-                    <li><a href="index.html">HOME</a></li>
-                    <li><a href="about.html">ABOUT</a></li>
-                    <li><a href="course.html">COURSE</a></li>
-                    <li><a href="blog.html">BLOG</a></li>
-                    <li><a href="contact.html">CONTACT</a></li>
-                </ul>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>body {
+        background-color: #FBF1D3;
+        font-family: 'Poppins', sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    
+    header {
+        background-color: #ffffff;
+        padding: 20px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    
+    nav {
+        margin-right: 20px;
+    }
+    
+    .menu-btn {
+        display: none;
+        cursor: pointer;
+    }
+    
+    .fa-bars {
+        font-size: 1.5rem;
+    }
+    
+    .nav-links {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+    
+    .nav-links li {
+        margin: 0 15px;
+    }
+    
+    .nav-links a {
+        text-decoration: none;
+        color: maroon;
+        font-weight: bold;
+        transition: color 0.3s ease;
+    }
+    
+    .nav-links a:hover {
+        color: #8B0000;
+    }
+    
+    .course {
+        background-color: #ffffff;
+        border: 1px solid gray;
+        padding: 20px;
+        margin: 20px;
+        width: 80%;
+    }
+    
+    .course h2 {
+        text-align: center;
+        color: maroon;
+    }
+    
+    .course p {
+        text-align: justify;
+        font-size: 14px;
+    }
+    
+    @media screen and (max-width: 768px) {
+        .menu-btn {
+            display: block;
+        }
+    
+        .nav-links {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 80px;
+            right: 0;
+            background-color: #ffffff;
+            width: 50%;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 10px 0;
+        }
+    
+        .nav-links.show {
+            display: flex;
+        }
+    
+        .nav-links li {
+            margin: 10px 0;
+        }
+    
+        .nav-links a {
+            text-align: center;
+        }
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="website.html"><img src="john.jpeg"></a>
+        </div>
+        <nav>
+            <div class="menu-btn" onclick="toggleMenu()">
+                <i class="fa fa-bars"></i>
             </div>
-            <i class="fa fa-bars" onclick="showMenu()"></i>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="course.html">COURSE</a></li>
+                <li><a href="blog.html">BLOG</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
         </nav>
-        <h1> Our Courses </h1> 
-        
-        <div class="course"> 
+    </header>
+
+    <h1>Our Courses</h1> 
+
+    <div class="course"> 
             <h2>Beginner Syllabus</h2> 
             <ol>
               <li>Chess Board, Pieces, and Notation</li>
@@ -123,9 +202,17 @@
             <li>Pawn endgames</li> 
             <li>Game analysis</li> 
         </ol> 
-      
-        </div> 
-    </body> 
-    </html> 
-    
-    
+            <!-- Other list items -->
+        </ol>
+    </div> 
+
+    <!-- Other course sections -->
+
+    <script>
+        function toggleMenu() {
+            var navLinks = document.getElementById("navLinks");
+            navLinks.classList.toggle("show");
+        }
+    </script>
+</body>
+</html>
