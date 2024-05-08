@@ -18,15 +18,20 @@
     
     header {
         background-color: #ffffff;
-        padding: 20px 0;
+        padding: 20px;
         display: flex;
         justify-content: space-between;
         align-items: center;
         box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
     }
     
-    nav {
-        margin-right: 20px;
+    .logo {
+        margin-left: 20px; /* Adjust margin as needed */
+    }
+    
+    .logo img {
+        width: 100px; /* Adjust width as needed */
+        height: auto;
     }
     
     .menu-btn {
@@ -111,7 +116,8 @@
 </head>
 <body>
     <header>
-        <a href="website.html"><img src="john.jpeg"></a>
+        <div class="logo">
+            <a href="website.html"><img src="john.jpeg" alt="Logo"></a>
         </div>
         <nav>
             <div class="menu-btn" onclick="toggleMenu()">
@@ -127,6 +133,7 @@
         </nav>
     </header>
 
+    <!-- Course sections -->
     <h1>Our Courses</h1> 
 
     <div class="course"> 
@@ -205,8 +212,6 @@
             <!-- Other list items -->
         </ol>
     </div> 
-
-    <!-- Other course sections -->
 
     <script>
         function toggleMenu() {
