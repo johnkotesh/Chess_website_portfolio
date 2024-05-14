@@ -45,10 +45,10 @@
             padding: 20px;
         }
         img {
-        width: 200px;
-        height: 200px;
+        width: 100px;
+        height: 100px;
         border-radius: 50%;
-        overflow: hidden; 
+        overflow: hidden;  align-items: center;
         }
         footer {
             background-color: #333;
