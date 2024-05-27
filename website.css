@@ -91,13 +91,20 @@
 
         @media (max-width: 768px) {
             .menu-btn {
-                display: inline-block;
+                display: block;
             }
-                @media screen and (min-width:250px) and (max-width:480px) {
-                .container{
-                  grid-template-columns: repeat(1,1fr);
+         @media screen and (max-width: 480px) {
+                .grid-container {
+                    grid-template-columns: 1fr;
                 }
-              }
+            }
+            
+            @media screen and (max-width: 320px) {
+                .puz {
+                    height: 200px;
+                    width: 200px;
+                }
+            } 
 
             nav ul {
                 display: none;
